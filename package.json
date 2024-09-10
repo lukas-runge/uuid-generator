@@ -104,6 +104,26 @@
       ]
     },
     {
+      "name": "generateTypeID",
+      "title": "Generate TypeIDs",
+      "description": "Copy generated TypeIDs to the clipboard",
+      "mode": "no-view",
+      "arguments": [
+        {
+          "name": "prefix",
+          "placeholder": "Prefix",
+          "type": "text",
+          "required": true
+        },
+        {
+          "name": "numberOfUUIDsToGenerate",
+          "type": "text",
+          "placeholder": "1",
+          "required": false
+        }
+      ]
+    },
+    {
       "name": "viewHistory",
       "title": "View History",
       "description": "View the UUID history",
