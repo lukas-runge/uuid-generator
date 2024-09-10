@@ -76,6 +76,17 @@
           "placeholder": "1",
           "required": false
         }
+      ],
+      "preferences": [
+        {
+          "name": "base32Encoding",
+          "type": "checkbox",
+          "required": false,
+          "default": false,
+          "title": "Options",
+          "label": "Base32 Encoding",
+          "description": "Should letters be Base32 encoded?"
+        }
       ]
     },
     {

@@ -1,4 +1,5 @@
 import { showHUD, Clipboard, getPreferenceValues, showToast, Toast, LaunchProps } from "@raycast/api";
+import { typeid } from "typeid-js";
 import { v7 as uuidV7 } from "uuid";
 
 import { generateUuids } from "./utils/uuidUtils";
@@ -24,7 +25,8 @@ export default async (props: LaunchProps<{ arguments: Arguments.GenerateV7 }>) =
 
     // safe?
     if (parseableNumber <= UUID_MAX_NUMBER) {
-      const uuids = await generateUuids(uuidV7, parseableNumber, upperCaseLetters, UUIDType.UUIDV7);
+      const generator = base32Encoding ? () => typeid("").toString() : uuidV7;
+      const uuids = await generateUuids(generator, parseableNumber, upperCaseLetters, UUIDType.UUIDV7);
 
       if (defaultAction === "copy") {
         await Clipboard.copy(uuids.join("\r\n"));
